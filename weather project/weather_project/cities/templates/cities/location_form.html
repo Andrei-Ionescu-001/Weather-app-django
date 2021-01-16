@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<br>
+<div class="container jumbotron bg-dark text-white">
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-warning" value="Add the city to your list">
+    </form>
+</div>
+
+{% endblock %}

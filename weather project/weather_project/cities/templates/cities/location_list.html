@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<br>
+{% if location_list %}
+    <h3>Your cities:</h3>
+    <div class="list-group">
+        {% for location in location_list %}
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header"><h4>{{ location.name }}</h4></div>
+              <div class="card-body">
+                <h5 class="card-title"><a class="btn btn-warning" href="{% url 'cities:single' pk=location.pk name=location.name %}">Click to see more details</a>
+                    <br></h5>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <h3>You have no cities added</h3>
+{% endif %}
+{% endblock %}

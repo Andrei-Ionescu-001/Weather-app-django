@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<br>
+<div class="jumbotron bg-dark text-white">
+<h3>Are you sure?</h3>
+
+<form method="post">
+    {% csrf_token %}
+	<input type="submit" value="Confirm Delete" class="btn btn-danger btn-large">
+	<a href="{% url 'cities:all'  %}" class="btn btn-light btn-large">Cancel</a>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="jumbotron bg-dark text-white">
+<br>
+<h3>City name: {{ location.name }}</h3>
+<br>
+<h3>Temperature: {{ temp }} °C</h3>
+<br>
+<h3>Weather condition: {{ weather_condition }} </h3>
+<br>
+<h3>Feels like: {{ feels_like }} °C</h3>
+<br>
+<h3>Temperature min: {{ temp_min }} °C</h3>
+<br>
+<h3>Temperature max: {{ temp_max }} °C</h3>
+<br>
+<h3>Humidity: {{ humidity }} %</h3>
+<br>
+<h3>Wind speed: {{ wind }} km/h ({{ wind_miles }} miles/h )</h3>
+<br>
+
+{% if user.is_authenticated %}
+    <a class="btn btn-warning" href="{% url 'cities:delete' name=location.name  pk=location.pk %}"><span class="fa fa-remove">Delete</span></a>
+{% endif %}
+</div>
+{% endblock %}

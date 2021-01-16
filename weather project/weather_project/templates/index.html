@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="jumbotron bg-dark text-white">
+  <h1 class="display-4">Hello!</h1>
+  <hr class="my-4">
+  <p>This is a weather app, you can add and delete cities to your account and view the current weather in each one.</p>
+  <a class="btn btn-warning" href="{% url 'cities:new' %}" role="button">Add city</a>
+</div>
+{% endblock %}
